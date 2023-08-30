@@ -178,7 +178,7 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      該次作業程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">05</span>/src/ 檔案夾。
+      該次作業程式碼，請放在<a href="https://github.com/t112598018/vis2023f/tree/main/hw05" >這個連結</a><span>的src檔案夾</span>。
     </div>
   </div>
 
@@ -197,23 +197,33 @@
           <th>總分</th>
           <th>完成後打勾</th>
           <th>配分</th>
+          <th>等級</th>
           <th>分項描述</th>
         </tr>
         <tr>
           <td rowspan="7" id="myTotal"></td>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
-          <td id='m1'>2</td>
-          <td>Simple baseline - 描述、描述、描述</td>
+          <td id='m1'>1</td>
+          <td>Simple baseline</td>
+          <td>實作Force-directed tree呈現分組情況</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>6</td>
-          <td>Medium baseline - 描述、描述、描述 </td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox2"></td>
+          <td id='m2'>2</td>
+          <td>Medium baseline </td>
+          <td>(1)滑鼠移動過去顯示該成員相關資訊 </td>
         </tr>
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
-          <td id='m3'>2</td>
-          <td>Strong baseline - 描述、描述、描述 </td>
+          <td id='m3'>3</td>
+          <td></td>
+          <td>(2)將個人圖片放入節點圓圈中 </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4"></td>
+          <td id='m4'>4</td>
+          <td>Strong baseline </td>
+          <td>根據累積卡路里顯示該成員圖案大小</td>
         </tr>
       </table>
     </div>
@@ -265,6 +275,10 @@
 
     if (d3.select("#myCheckbox3").property("checked")){
       score += parseInt(d3.select('#m3').html());   
+    }
+
+    if (d3.select("#myCheckbox4").property("checked")){
+      score += parseInt(d3.select('#m4').html());   
     }
 
     d3.select("#myTotal").html(score);    
