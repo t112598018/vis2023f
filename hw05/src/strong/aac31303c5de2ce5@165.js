@@ -2,26 +2,6 @@ function _1(md){return(
 md`# HW5 Strong baseline`
 )}
 
-function _simple(FileAttachment){return(
-FileAttachment("simple(分數版).json").json()
-)}
-
-function _url_list(){return(
-[
-  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/01.svg",
-  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/11.svg",
-  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/12.svg",
-  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/21.svg",
-  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/22.svg",
-  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/31.svg",
-  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/32.svg",
-  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/41.svg",
-  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/42.svg",
-  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/51.svg",
-  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/52.svg"
-]
-)}
-
 function _simple1(d3,simple,drag,url_list,invalidation)
 {
   // 指定圖表的尺寸。
@@ -209,6 +189,30 @@ function _simple1(d3,simple,drag,url_list,invalidation)
 }
 
 
+function _3(htl){return(
+htl.html`<hr>`
+)}
+
+function _simple(FileAttachment){return(
+FileAttachment("simple(分數版).json").json()
+)}
+
+function _url_list(){return(
+[
+  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/01.svg",
+  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/11.svg",
+  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/12.svg",
+  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/21.svg",
+  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/22.svg",
+  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/31.svg",
+  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/32.svg",
+  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/41.svg",
+  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/42.svg",
+  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/51.svg",
+  "https://tjhsieh.github.io/c/vis/vis2023f/syllabus/grade/svg10/52.svg"
+]
+)}
+
 function _drag(d3){return(
 simulation => {
   
@@ -244,9 +248,10 @@ export default function define(runtime, observer) {
   ]);
   main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
   main.variable(observer()).define(["md"], _1);
+  main.variable(observer("simple1")).define("simple1", ["d3","simple","drag","url_list","invalidation"], _simple1);
+  main.variable(observer()).define(["htl"], _3);
   main.variable(observer("simple")).define("simple", ["FileAttachment"], _simple);
   main.variable(observer("url_list")).define("url_list", _url_list);
-  main.variable(observer("simple1")).define("simple1", ["d3","simple","drag","url_list","invalidation"], _simple1);
   main.variable(observer("drag")).define("drag", ["d3"], _drag);
   return main;
 }
