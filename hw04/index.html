@@ -178,14 +178,33 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      該次作業程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">04</span>/src/ 檔案夾。
+      Simple Baseline 及 Medium Baseline 程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">04</span>/src-sunburst/ 檔案夾。<br>
+      <hr>
+      Strong Baseline 程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">04</span>/src-strong/ 檔案夾。<br>
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      <h4>前往你的 Demo 網頁</h4>
+    </div>
+  </div>
+  
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <a href="https://t112598018.github.io/vis2023f/hw04/src-sunburst/" target="_blank">https://t112598018.github.io/vis2023f/hw04/src-sunburst/</a>
+      <hr>
+      <a href="https://t112598018.github.io/vis2023f/hw04/src-strong/" target="_blank">https://t112598018.github.io/vis2023f/hw04/src-strong/</a>
+      </div>
+  </div>
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      心得：<br>
+      這次的工作中，我著手於資料的觀察和深入分析，隨後將這些結果巧妙地轉化成視覺化呈現，製作成一張生動的旭日圖。這種方式非常有助於我們對數據差異的敏感度，使得比較不同部分的優劣變得直觀而清晰。這對於研究工作而言，提供了寶貴的協助，不僅讓我更深入地理解資料的特點，也使得數據之間的關係更加明確。製作旭日圖的過程不僅使數據更生動，同時也為研究提供了一個直觀而有效的分析工具，成果確實令人滿意。
     </div>
   </div>
 
@@ -201,19 +220,29 @@
         </tr>
         <tr>
           <td rowspan="7" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked="checked"></td>
           <td id='m1'>2</td>
-          <td>Simple baseline - 描述、描述、描述</td>
+          <td>Simple baseline 1 - 完成旭日圖</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>6</td>
-          <td>Medium baseline - 描述、描述、描述 </td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked="checked"></td>
+          <td id='m2'>1</td>
+          <td>Simple baseline 2 - 完成頁面路徑</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked="checked"></td>
           <td id='m3'>2</td>
-          <td>Strong baseline - 描述、描述、描述 </td>
+          <td>Medium baseline 1 - 加入Tooltip </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked="checked"></td>
+          <td id='m4'>2</td>
+          <td>Medium baseline 2 - 完成結論 </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox5" ></td>
+          <td id='m5'>3</td>
+          <td>Strong baseline - 將兩個問題之間的意義以圖表呈現(可互動) </td>
         </tr>
       </table>
     </div>
@@ -222,9 +251,12 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
+      <!-- <video id="video1" style="width:100%;max-width:100%;" controls="">
         <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+      </video> -->
+      <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF"
+  src="https://observablehq.com/embed/277eab861b518c72?cell=*"></iframe>
+
     </div>
   </div>
 
@@ -265,6 +297,14 @@
 
     if (d3.select("#myCheckbox3").property("checked")){
       score += parseInt(d3.select('#m3').html());   
+    }
+
+    if (d3.select("#myCheckbox4").property("checked")){
+      score += parseInt(d3.select('#m4').html());   
+    }
+    
+    if (d3.select("#myCheckbox5").property("checked")){
+      score += parseInt(d3.select('#m5').html());   
     }
 
     d3.select("#myTotal").html(score);    
