@@ -1,5 +1,5 @@
 function _1(md){return(
-md`# Simple baseLine
+md`# HW5 Simple baseLine
 `
 )}
 
@@ -7,14 +7,14 @@ function _2(md){return(
 md`## 實作Force-directed tree呈現小組情況(1pt)`
 )}
 
-function _simple1(d3,simple_data,invalidation)
+function _simple1(d3,output,invalidation)
 {
    // 指定圖表的尺寸。
-  const width = 500;
-  const height = 400;
+  const width = 1500;
+  const height = 1000;
 
   // 計算圖形並啟動力模擬。
-  const root = d3.hierarchy(simple_data);
+  const root = d3.hierarchy(output);
   const links = root.links();
   const nodes = root.descendants();
   
@@ -66,9 +66,6 @@ function _simple1(d3,simple_data,invalidation)
   nodes.forEach(node => {
     node.y = 0; // 將y座標設定在畫布的中間
   });
-
-  // 更新力模擬的y方向力，讓節點向下運動
-  simulation.force("y", d3.forceY().strength(0.1).y(d => d.depth * 100)); // 調整力的方向和大小
   
   simulation.on("tick", () => {
     node.attr("transform", d => `translate(${d.x},${d.y})`); // 更新節點位置
@@ -85,18 +82,22 @@ function _simple1(d3,simple_data,invalidation)
 }
 
 
-function _4(md){return(
+function _4(htl){return(
+htl.html`<hr>`
+)}
+
+function _5(md){return(
 md`## 使節點可以被拖拉移動(1pt)`
 )}
 
-function _simple2(d3,simple_data,drag,invalidation)
+function _simple2(d3,output,drag,invalidation)
 {
   // 指定圖表的尺寸。
-  const width = 500;
-  const height = 400;
+  const width = 1500;
+  const height = 1000;
 
   // 計算圖形並啟動力模擬。
-  const root = d3.hierarchy(simple_data);
+  const root = d3.hierarchy(output);
   const links = root.links();
   const nodes = root.descendants();
   
@@ -150,9 +151,6 @@ function _simple2(d3,simple_data,drag,invalidation)
     node.y = 0; // 將y座標設定在畫布的中間
   });
 
-  // 更新力模擬的y方向力，讓節點向下運動
-  simulation.force("y", d3.forceY().strength(0.1).y(d => d.depth * 100)); // 調整力的方向和大小
-  
   simulation.on("tick", () => {
     node.attr("transform", d => `translate(${d.x},${d.y})`); // 更新節點位置
     link
@@ -168,18 +166,22 @@ function _simple2(d3,simple_data,drag,invalidation)
 }
 
 
-function _6(md){return(
+function _7(htl){return(
+htl.html`<hr>`
+)}
+
+function _8(md){return(
 md`## 將個人圖片放入節點圓圈中(1pt)`
 )}
 
-function _simple3(d3,simple_data,drag,invalidation)
+function _simple3(d3,output,drag,invalidation)
 {
   // 指定圖表的尺寸。
-  const width = 500;
-  const height = 400;
-
+  const width = 1500;
+  const height = 1000;
+  
   // 計算圖形並啟動力模擬。
-  const root = d3.hierarchy(simple_data);
+  const root = d3.hierarchy(output);
   const links = root.links();
   const nodes = root.descendants();
   
@@ -246,9 +248,6 @@ function _simple3(d3,simple_data,drag,invalidation)
   nodes.forEach(node => {
     node.y = 0; // 將y座標設定在畫布的中間
   });
-
-  // 更新力模擬的y方向力，讓節點向下運動
-  simulation.force("y", d3.forceY().strength(0.1).y(d => d.depth * 100)); // 調整動力的方向和大小
   
   simulation.on("tick", () => {
     node.attr("transform", d => `translate(${d.x},${d.y})`); // 更新節點位置
@@ -264,10 +263,6 @@ function _simple3(d3,simple_data,drag,invalidation)
   return svg.node();
 }
 
-
-function _simple_data(FileAttachment){return(
-FileAttachment("simple@1.json").json()
-)}
 
 function _drag(d3){return(
 simulation => {
@@ -296,21 +291,27 @@ simulation => {
 }
 )}
 
+function _output(FileAttachment){return(
+FileAttachment("output@2.json").json()
+)}
+
 export default function define(runtime, observer) {
   const main = runtime.module();
   function toString() { return this.url; }
   const fileAttachments = new Map([
-    ["simple@1.json", {url: new URL("../output.json", import.meta.url), mimeType: "application/json", toString}]
+    ["output@2.json", {url: new URL("../output.json", import.meta.url), mimeType: "application/json", toString}]
   ]);
   main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
   main.variable(observer()).define(["md"], _1);
   main.variable(observer()).define(["md"], _2);
-  main.variable(observer("simple1")).define("simple1", ["d3","simple_data","invalidation"], _simple1);
-  main.variable(observer()).define(["md"], _4);
-  main.variable(observer("simple2")).define("simple2", ["d3","simple_data","drag","invalidation"], _simple2);
-  main.variable(observer()).define(["md"], _6);
-  main.variable(observer("simple3")).define("simple3", ["d3","simple_data","drag","invalidation"], _simple3);
-  main.variable(observer("simple_data")).define("simple_data", ["FileAttachment"], _simple_data);
+  main.variable(observer("simple1")).define("simple1", ["d3","output","invalidation"], _simple1);
+  main.variable(observer()).define(["htl"], _4);
+  main.variable(observer()).define(["md"], _5);
+  main.variable(observer("simple2")).define("simple2", ["d3","output","drag","invalidation"], _simple2);
+  main.variable(observer()).define(["htl"], _7);
+  main.variable(observer()).define(["md"], _8);
+  main.variable(observer("simple3")).define("simple3", ["d3","output","drag","invalidation"], _simple3);
   main.variable(observer("drag")).define("drag", ["d3"], _drag);
+  main.variable(observer("output")).define("output", ["FileAttachment"], _output);
   return main;
 }
