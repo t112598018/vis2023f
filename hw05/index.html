@@ -210,11 +210,11 @@
   <div class="row hw12">
     <div class="col-md-12 twenty">
       <h4><u>前往你的Demo 網頁</u></h4>
-      <a href="https://t112598018.github.io/vis2023f/hw05/src/simple/">https://t112598018.github.io/vis2023f/hw05/src/simple/</a>
+      <a href="https://t112598018.github.io/vis2023f/hw05/src/simple/" target="_blank">https://t112598018.github.io/vis2023f/hw05/src/simple/</a>
       <hr>
-      <a href="https://t112598018.github.io/vis2023f/hw05/src/medium/">https://t112598018.github.io/vis2023f/hw05/src/medium/</a>   
+      <a href="https://t112598018.github.io/vis2023f/hw05/src/medium/" target="_blank">https://t112598018.github.io/vis2023f/hw05/src/medium/</a>   
       <hr>
-      <a href="https://t112598018.github.io/vis2023f/hw05/src/strong/">https://t112598018.github.io/vis2023f/hw05/src/strong/</a>
+      <a href="https://t112598018.github.io/vis2023f/hw05/src/strong/" target="_blank">https://t112598018.github.io/vis2023f/hw05/src/strong/</a>
       </div>
   </div>
 
@@ -226,7 +226,8 @@
     
     <div class="col-md-12 twenty">
       <h4><u>心得</u></h4>
-      <h5>這次作業在於使用D3.js所提供的視覺化工具Force-directed tree，而如何實作這個Force-directed tree並且運用得當，</h4>
+      <h5>
+        這次作業在於使用D3.js所提供的視覺化工具Force-directed tree，而如何實作這個Force-directed tree並且運用得當，並且加上許多功能，而在實作過能也遇到一些困難，尤其是在實作展開收縮的功能時，最後用改變數據結構來達到此功能。</h5>
     </div>
   </div>
 
@@ -244,37 +245,37 @@
         </tr>
         <tr>
           <td rowspan="8" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked="checked"></td>
           <td id='m1'>1</td>
           <td>Simple baseline</td>
           <td>(1)實作Force-directed tree呈現分組情況</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked="checked"></td>
           <td id='m2'>1</td>
           <td></td>
           <td>(2)使節點可以被拖拉移動</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked="checked"></td>
           <td id='m3'>1</td>
           <td></td>
           <td>(3)將個人圖片放入節點圓圈中</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox4"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked="checked"></td>
           <td id='m4'>1</td>
           <td>Medium baseline</td>
           <td>(1)滑鼠移動過去顯示該成員相關資訊</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox5"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox5" checked="checked"></td>
           <td id='m5'>2</td>
           <td></td>
           <td>(2)滑鼠移動過去放大節點及圖片</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox6"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox6" checked="checked"></td>
           <td id='m6'>2</td>
           <td></td>
           <td>(3)點擊節點可以展開或縮放</td>
@@ -298,26 +299,26 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <h4><u>Simple_baseline</u></h4>
+      <h4><u>Simple_baseline</u>  <a href="https://observablehq.com/d/d8fd4ad9976afc7d" target="_blank">範例連結</a></h4>
       <table style="width:100%">
         <tr>
-          <th>(1)實作Force-directed tree呈現分組情況    <a href="https://observablehq.com/d/618e84d2953cf057">範例連結</a></th>
-          <th>(2)使節點可以被拖拉移動    <a href="https://observablehq.com/d/6770dcbb38d3cc97">範例連結</a></th>
-          <th>(3)將個人圖片放入節點圓圈中    <a href="https://observablehq.com/d/1d5350d066ee8a00">範例連結</a></th>
+          <th>(1)實作Force-directed tree呈現分組情況</th>
+          <th>(2)使節點可以被拖拉移動</th>
+          <th>(3)將個人圖片放入節點圓圈中</th>
         </tr>
         <tr>
           <td>
             <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF"
-            src="https://observablehq.com/embed/d8fd4ad9976afc7d@730?cells=simple1"></iframe>
+            src="https://observablehq.com/embed/d8fd4ad9976afc7d?cells=simple1"></iframe>
           </td>
           <td>
             <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF"
-            src="https://observablehq.com/embed/d8fd4ad9976afc7d@730?cells=simple2"></iframe>
+            src="https://observablehq.com/embed/d8fd4ad9976afc7d?cells=simple2"></iframe>
             
           </td>
           <td>
             <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF"
-            src="https://observablehq.com/embed/d8fd4ad9976afc7d@731?cells=simple3"></iframe>
+            src="https://observablehq.com/embed/d8fd4ad9976afc7d?cells=simple3"></iframe>
           </td>
         </tr>
       </table>
@@ -326,25 +327,25 @@
 <!-- ------------------------------------------------>
     <div class="row hw12">
     <div class="col-md-12 twenty">
-      <h4><u>Medium_baseline</u></h4>
+      <h4><u>Medium_baseline</u>    <a href="https://observablehq.com/d/b4337f17294e8ec2" target="_blank">範例連結</a></h4>
         <table style="width:100%">
           <tr>
-            <th>(1)滑鼠移動過去顯示該成員相關資訊    <a href="https://observablehq.com/d/339a68d49ad6cbc6">範例連結</a></th>
-            <th>(2)滑鼠移動過去放大節點及圖片    <a href="https://observablehq.com/d/9e6ab5ca25e18dfc">範例連結</a></th>
-            <th>(3)點擊節點可以展開或縮放    <a href="https://observablehq.com/d/7a5e99438ac7be5d">範例連結</a></th>
+            <th>(1)滑鼠移動過去顯示該成員相關資訊</th>
+            <th>(2)滑鼠移動過去放大節點及圖片</th>
+            <th>(3)點擊節點可以展開或縮放</th>
           </tr>
           <tr>
             <td>
               <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF"
-              src="https://observablehq.com/embed/339a68d49ad6cbc6@644?cells=simple1"></iframe>
+              src="https://observablehq.com/embed/b4337f17294e8ec2?cells=simple1"></iframe>
             </td>
             <td>
               <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF"
-              src="https://observablehq.com/embed/9e6ab5ca25e18dfc?cells=simple1"></iframe>
+              src="https://observablehq.com/embed/b4337f17294e8ec2?cells=simple2"></iframe>
             </td>
             <td>
               <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF"
-              src="https://observablehq.com/embed/7a5e99438ac7be5d@743?cells=simple1"></iframe>
+              src="https://observablehq.com/embed/b4337f17294e8ec2?cells=simple3"></iframe>
             </td>
           </tr>
         </table>
@@ -352,11 +353,11 @@
   </div>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <h4><u>Strong_baseline</u></h4>
+      <h4><u>Strong_baseline</u>    <a href="" target="_blank">範例連結</a></h4>
       <table style="width:100%">
         <tr>
-          <th>(1)根據累積卡路里適當放大成員節點及圖片    <a href="">範例連結</a></th>
-          <th>(2)讓放大的節點中利用蘋果成績圖環繞個人照片    <a href="">範例連結</a></th>
+          <th>(1)根據累積卡路里適當放大成員節點及圖片</th>
+          <th>(2)讓放大的節點中利用蘋果成績圖環繞個人照片</th>
         </tr>
         <tr>
           <td>
