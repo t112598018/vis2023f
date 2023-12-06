@@ -1,0 +1,14 @@
+{
+  "name": "94784ecfa5ee4af4",
+  "main": "94784ecfa5ee4af4@123.js",
+  "version": "123.0.0",
+  "homepage": "https://observablehq.com/d/94784ecfa5ee4af4",
+  "author": {
+    "name": "蕭裕憲's Workspace",
+    "url": "https://observablehq.com/@xiao-yu-xian-ws"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
